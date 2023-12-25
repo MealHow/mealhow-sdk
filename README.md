@@ -5,6 +5,7 @@ Artifact Registry Repo URL: https://us-central1-python.pkg.dev/mealhow/mealhow-m
 ```shell
 python -m build
 twine upload -r  mealhow-meal-plan-generator dist/*
+pip install --index-url https://us-central1-python.pkg.dev/mealhow/mealhow-meal-plan-generator/simple/ meal-plan-generator==0.1.*
 ```
 
 ##Resources:
