@@ -44,12 +44,12 @@ async def parse_diet_plan(raw_data: str) -> list[dict]:
         "meal_name",
     )
 
-    for item in config.REPLACE_WORDS_MAPPING:
+    for item in consts.REPLACE_WORDS_MAPPING:
         raw_data = raw_data.replace(*item)
         raw_data = raw_data.replace(item[0].lower(), item[1])
 
     parsed_data = await _parse_csv(
-        raw_data, keyword="preparation", fieldnames=config.MEAL_PLAN_FIELDNAMES
+        raw_data, keyword="preparation", fieldnames=consts.MEAL_PLAN_FIELDNAMES
     )
 
     new_data = []
