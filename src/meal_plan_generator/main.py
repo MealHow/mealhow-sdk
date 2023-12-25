@@ -1,8 +1,7 @@
 import asyncio
 from typing import Any
 
-import external_api
-import parsers
+from . import external_api, parsers
 
 
 async def calculate_total_daily_micronutrients(

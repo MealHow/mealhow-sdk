@@ -1,7 +1,6 @@
 import csv
 
-import consts
-import helpers
+from . import consts, helpers
 
 
 async def _parse_csv(
