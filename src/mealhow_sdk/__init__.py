@@ -1,4 +1,2 @@
-import external_api
-import datastore_models
-import helpers
+from . import external_api, datastore_models, helpers
 from .main import request_meal_plans, compound_most_optimal_meal_plan
