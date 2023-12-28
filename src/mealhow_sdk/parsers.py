@@ -3,9 +3,7 @@ import csv
 from . import consts, helpers
 
 
-async def _parse_csv(
-        csv_data: str, keyword: str, fieldnames: list[str], delimiter: str = ";"
-) -> list[dict]:
+async def _parse_csv(csv_data: str, keyword: str, fieldnames: list[str], delimiter: str = ";") -> list[dict]:
     split_data = csv_data.splitlines()
     new_split_data = []
 
@@ -17,10 +15,7 @@ async def _parse_csv(
             strip_value = i.strip()
             if strip_value.count(delimiter) == len(fieldnames) - 1:
                 new_split_data.append(strip_value)
-            elif (
-                    strip_value.count(delimiter) + strip_value.count(",")
-                    == len(fieldnames) - 1
-            ):
+            elif strip_value.count(delimiter) + strip_value.count(",") == len(fieldnames) - 1:
                 new_split_data.append(strip_value.replace(",", delimiter))
 
     csv_data = "\n".join(new_split_data)
@@ -47,9 +42,7 @@ async def parse_diet_plan(raw_data: str) -> list[dict]:
         raw_data = raw_data.replace(*item)
         raw_data = raw_data.replace(item[0].lower(), item[1])
 
-    parsed_data = await _parse_csv(
-        raw_data, keyword="preparation", fieldnames=consts.MEAL_PLAN_FIELDNAMES
-    )
+    parsed_data = await _parse_csv(raw_data, keyword="preparation", fieldnames=consts.MEAL_PLAN_FIELDNAMES)
 
     new_data = []
     for i in range(len(parsed_data)):

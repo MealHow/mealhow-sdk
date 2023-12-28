@@ -8,7 +8,7 @@ async def str_to_int(raw_data: str) -> int:
 
 def to_snake_case(s):
     s = s.lower()
-    s = re.sub(r'\W+', '_', s)
-    s = s.strip('_')
+    s = re.sub(r"\W+", "_", s)
+    s = s.strip("_")
 
     return s
