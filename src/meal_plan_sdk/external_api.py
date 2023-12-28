@@ -25,3 +25,12 @@ async def openai_get_gpt_response(
             await asyncio.sleep(sleep_time)
 
     return response
+
+
+async def openai_get_generated_image_url(prompt: str, size: str = "1024x1024") -> str:
+    response = await openai.Image.acreate(
+        prompt=prompt,
+        n=1,
+        size=size,
+    )
+    return response["data"][0]["url"]

@@ -1,11 +1,11 @@
 # meal-plan-generator
 
-Artifact Registry Repo URL: https://us-central1-python.pkg.dev/mealhow/mealhow-meal-plan-generator/simple/
+Artifact Registry Repo URL: https://us-central1-python.pkg.dev/mealhow/mealhow-python/simple/
 
 ```shell
 python -m build
-twine upload -r  mealhow-meal-plan-generator dist/*
-pip install --index-url https://us-central1-python.pkg.dev/mealhow/mealhow-meal-plan-generator/simple/ meal-plan-generator==0.1.*
+twine upload -r  mealhow-python dist/*
+pip install --index-url https://us-central1-python.pkg.dev/mealhow/mealhow-python/simple/ mealhow-sdk==0.1.0
 ```
 
 ##Resources:
