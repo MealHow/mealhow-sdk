@@ -1,4 +1,4 @@
-# meal-plan-generator
+# mealhow-sdk
 
 Artifact Registry Repo URL: https://us-central1-python.pkg.dev/mealhow/mealhow-python/simple/
 
