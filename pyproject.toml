@@ -39,6 +39,7 @@ openai = "0.28.1"
 asyncio = "3.4.3"
 google-cloud-ndb = "2.2.2"
 twine = "^4.0.2"
+gcloud-aio-storage = "9.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
