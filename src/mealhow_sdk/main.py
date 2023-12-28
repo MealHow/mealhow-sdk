@@ -2,6 +2,7 @@ import asyncio
 from typing import Any
 
 from . import external_api, parsers
+from helpers import to_snake_case
 
 
 async def calculate_total_daily_micronutrients(
@@ -92,5 +93,10 @@ async def compound_most_optimal_meal_plan(
             if diff < daily_calories_goal_diff[day]:
                 optimal_meal_plan[day] = meal_plan_variations_structured[i][day]
                 daily_calories_goal_diff[day] = diff
+
+    for day in optimal_meal_plan:
+        meals = optimal_meal_plan[day]["meals"]
+        for i in range(len(meals)):
+            optimal_meal_plan[day]["meals"][i]["id"] = f"{to_snake_case(meals[i]['meal_name'])}-{meals[i]['calories']}"
 
     return optimal_meal_plan

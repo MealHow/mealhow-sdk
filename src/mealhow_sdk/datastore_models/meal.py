@@ -1,6 +1,6 @@
 from google.cloud import ndb
 
-from src.meal_plan_sdk.datastore_models.user import User
+from src.mealhow_sdk.datastore_models.user import User
 
 
 class MealImage(ndb.Model):
