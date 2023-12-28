@@ -27,7 +27,7 @@ disallow_untyped_defs = true
 
 [tool.poetry]
 name = "mealhow-sdk"
-version = "0.1.0"
+version = "0.1.5"
 description = "MealHow Python SDK"
 authors = ["Vitalii Vinnychenko <vitalii@mealhow.ai>"]
 license = "Proprietary"
@@ -38,6 +38,7 @@ python = ">=3.9,<4"
 openai = "0.28.1"
 asyncio = "3.4.3"
 google-cloud-ndb = "2.2.2"
+twine = "^4.0.2"
 
 
 [tool.poetry.group.dev.dependencies]
