@@ -10,6 +10,7 @@ class MealImageThumbnail(ndb.Model):
 
 class MealImage(ndb.Model):
     images = ndb.StructuredProperty(MealImageThumbnail, repeated=True)
+    artifact_reported = ndb.BooleanProperty(default=False)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
@@ -26,6 +27,7 @@ class Meal(ndb.Model):
     fats = ndb.IntegerProperty()
     image = ndb.KeyProperty(kind=MealImage)
     recipe = ndb.KeyProperty(kind=MealRecipe, indexed=True)
+    preparation_time = ndb.StringProperty()
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
