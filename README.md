@@ -67,7 +67,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 # [install gcloud](https://cloud.google.com/sdk/docs/install-sdk)
 gcloud init # login with your Regrow google account and select project `mealhow-dev`
 poetry self add "keyrings.google-artifactregistry-auth"
-cd core-api
+cd mealhow-sdk
 poetry shell
 poetry install
 ```
@@ -88,11 +88,11 @@ gcloud auth application-default login
 
 ## 2.1 GCP credentials
 
-Copy credentials json in the response from `gcloud auth application-default login` to `[core-api code folder]/sa.json` for use by the application.
+Copy credentials json in the response from `gcloud auth application-default login` to `[mealhow-sdk code folder]/sa.json` for use by the application.
 Sometimes it ends up in `.config/gcloud/credentials.db`.
 
 ```bash
-cp ~/path/to/credentials.json ~/path/to/core-api/sa.json
+cp ~/path/to/credentials.json ~/path/to/mealhow-sdk/sa.json
 ```
 
 # 3.0 Installing pre-commit
@@ -103,7 +103,7 @@ We use commit hooks to run a bunch of checks (typing, lint etc) which can be don
 
 ```
 brew install pre-commit
-cd core-api
+cd mealhow-sdk
 pre-commit install
 ```
 
@@ -111,11 +111,11 @@ pre-commit install
 
 ```
 pip install pre-commit
-cd core-api
+cd mealhow-sdk
 pre-commit install
 ```
 
-note: before issuing `pre-commit install`, make sure you are in the GIT repo directory, e.g. `cd core-api`
+note: before issuing `pre-commit install`, make sure you are in the GIT repo directory, e.g. `cd mealhow-sdk`
 
 # 4.0 Build SDK and upload to Google Cloud Artifact Registry
 
