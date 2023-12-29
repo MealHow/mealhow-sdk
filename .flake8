@@ -111,7 +111,10 @@ ignore =
     PIE785,
     PIE798,
     PIE803,
-    PIE801
+    PIE801,
+    PIE807,
+    A003,
+    VNE003
 
 
 # Specify a list of mappings of files and the codes that should be ignored for the entirety of the

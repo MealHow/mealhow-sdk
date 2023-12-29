@@ -13,6 +13,7 @@ class User(ndb.Model):
     weight_goal_lbs = ndb.IntegerProperty()
     weight_goal_kg = ndb.IntegerProperty()
     calories_goal = ndb.IntegerProperty()
+    protein_goal = ndb.StringProperty()
     meal_prep_time = ndb.StringProperty()
     activity_level = ndb.StringProperty()
     avoid_foods = ndb.StringProperty(repeated=True)

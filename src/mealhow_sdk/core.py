@@ -1,8 +1,57 @@
 import asyncio
+from dataclasses import dataclass, field
 from typing import Any
 
-from . import external_api, parsers
+from . import external_api, parsers, prompt_templates
 from .helpers import to_snake_case
+
+
+@dataclass
+class MealPlanPromptInputData:
+    calories_goal: int
+    protein_goal: int | None = None
+    preparation_time: int | None = None
+    preferred_cuisines: list[str] = field(default_factory=lambda: [])
+    ingredients_to_avoid: list[str] = field(default_factory=lambda: [])
+    health_issues: list[str] = field(default_factory=lambda: [])
+
+
+async def get_openai_meal_plan_prompt(data: MealPlanPromptInputData) -> str:
+    prompt = prompt_templates.MEAL_PLAN_BASE_PROMPT
+
+    if data.protein_goal:
+        prompt = prompt.format(
+            protein_goal_prompt=prompt_templates.MEAL_PLAN_PROTEIN_GOAL.format(protein=data.protein_goal),
+            calories_goal=data.calories_goal,
+        )
+    else:
+        prompt = prompt.format(
+            protein_goal_prompt="",
+            calories_goal=data.calories_goal,
+        )
+
+    if data.preferred_cuisines:
+        prompt += prompt_templates.MEAL_PLAN_CUISINE_PREFERENCES.format(
+            cuisines=", ".join(data.preferred_cuisines).lower()
+        )
+        prompt += (
+            prompt_templates.CUISINE_SINGULAR
+            if len(data.preferred_cuisines) == 1
+            else prompt_templates.CUISINES_LIST_PLURAL
+        )
+
+    if data.preparation_time:
+        prompt += prompt_templates.MEAL_PLAN_PREPARATION_TIME.format(preparation_time=data.preparation_time)
+
+    if data.ingredients_to_avoid:
+        prompt += prompt_templates.MEAL_PLAN_INGREDIENTS_TO_AVOID.format(
+            ingredients=", ".join(data.ingredients_to_avoid).lower()
+        )
+
+    if data.health_issues:
+        prompt += prompt_templates.MEAL_PLAN_HEALTH_ISSUES.format(health_issues=", ".join(data.health_issues).lower())
+
+    return prompt
 
 
 async def calculate_total_daily_micronutrients(
