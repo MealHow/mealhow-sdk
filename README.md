@@ -122,6 +122,7 @@ note: before issuing `pre-commit install`, make sure you are in the GIT repo dir
 ## 4.1 Resources:
 
 [How to Store Python Packages in Google Artifact Registry](https://python.plainenglish.io/how-to-store-python-packages-in-google-artifact-registry-9a28d80d8040)
+
 [GCP docs: Specify dependencies in Python](https://cloud.google.com/functions/docs/writing/specifying-dependencies-python#python38)
 
 ## 4.2 Build and upload
