@@ -40,6 +40,8 @@ asyncio = "3.4.3"
 google-cloud-ndb = "2.2.2"
 twine = "^4.0.2"
 gcloud-aio-storage = "9.0.0"
+keyring = "^24.3.0"
+keyrings-google-artifactregistry-auth = "^1.1.2"
 
 
 [tool.poetry.group.dev.dependencies]

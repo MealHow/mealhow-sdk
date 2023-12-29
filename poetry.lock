@@ -1291,6 +1291,27 @@ docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.link
 testing = ["pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1)", "pytest-ruff"]
 
 [[package]]
+name = "keyrings-google-artifactregistry-auth"
+version = "1.1.2"
+description = "Keyring backend for Google Auth tokens"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "keyrings.google-artifactregistry-auth-1.1.2.tar.gz", hash = "sha256:bd6abb72740d2dfeb4a5c03c3b105c6f7dba169caa29dee3959694f1f02c77de"},
+    {file = "keyrings.google_artifactregistry_auth-1.1.2-py3-none-any.whl", hash = "sha256:e3f18b50fa945c786593014dc225810d191671d4f5f8e12d9259e39bad3605a3"},
+]
+
+[package.dependencies]
+google-auth = "*"
+keyring = "*"
+pluggy = "*"
+requests = "*"
+
+[package.extras]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=1.2.3)", "pytest-cov", "pytest-flake8", "pytest-mypy"]
+tox = ["tox"]
+
+[[package]]
 name = "lazy-object-proxy"
 version = "1.10.0"
 description = "A fast and thorough lazy object proxy."
@@ -2387,4 +2408,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<4"
-content-hash = "dcffcc631217ef9bf9e024f4319f158369a2bf6dfacc4ae5647890c455181ded"
+content-hash = "268e9da87d7ad490523152992c723c98da49ba4672a72a8e0809ae3525c6c7dc"
