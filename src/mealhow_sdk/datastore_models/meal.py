@@ -3,8 +3,13 @@ from google.cloud import ndb
 from .user import User
 
 
+class MealImageThumbnail(ndb.Model):
+    size = ndb.IntegerProperty()
+    url = ndb.StringProperty()
+
+
 class MealImage(ndb.Model):
-    images = ndb.JsonProperty()
+    images = ndb.StructuredProperty(MealImageThumbnail, repeated=True)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
@@ -19,13 +24,13 @@ class Meal(ndb.Model):
     protein = ndb.IntegerProperty()
     carbs = ndb.IntegerProperty()
     fats = ndb.IntegerProperty()
-    image_key = ndb.KeyProperty(kind=MealImage)
-    recipe_key = ndb.KeyProperty(kind=MealRecipe, indexed=True)
+    image = ndb.KeyProperty(kind=MealImage)
+    recipe = ndb.KeyProperty(kind=MealRecipe, indexed=True)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
 class FavoriteMeal(ndb.Model):
-    meal_key = ndb.KeyProperty(kind=Meal, indexed=True)
-    user_key = ndb.KeyProperty(kind=User, indexed=True)
+    meal = ndb.KeyProperty(kind=Meal, indexed=True)
+    user = ndb.KeyProperty(kind=User, indexed=True)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
     deleted_at = ndb.DateTimeProperty()
