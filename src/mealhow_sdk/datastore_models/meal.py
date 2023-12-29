@@ -27,7 +27,7 @@ class Meal(ndb.Model):
     fats = ndb.IntegerProperty()
     image = ndb.KeyProperty(kind=MealImage)
     recipe = ndb.KeyProperty(kind=MealRecipe, indexed=True)
-    preparation_time = ndb.StringProperty()
+    preparation_time = ndb.IntegerProperty()
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 

@@ -8,7 +8,7 @@ class MealPlanItem(ndb.Model):
     meal_name = ndb.StringProperty()
     meal_time = ndb.StringProperty()
     day = ndb.IntegerProperty()
-    preparation_time = ndb.StringProperty()
+    preparation_time = ndb.IntegerProperty()
     calories = ndb.IntegerProperty()
     protein = ndb.IntegerProperty()
     carbs = ndb.IntegerProperty()
