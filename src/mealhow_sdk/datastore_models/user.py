@@ -10,14 +10,14 @@ class WeightRecord(ndb.Model):
 
 class User(ndb.Model):
     email = ndb.StringProperty(indexed=True)
-    age = ndb.IntegerProperty()
+    age = ndb.DateProperty()
     biological_sex = ndb.StringProperty()
     meal_prep_time = ndb.StringProperty()
     activity_level = ndb.StringProperty()
     measurement_system = ndb.StringProperty()
     height_inches = ndb.IntegerProperty()
     height_cm = ndb.IntegerProperty()
-    goal_weight_lbs = ndb.StringProperty()
+    goal = ndb.StringProperty()
     current_weight = ndb.StructuredProperty(WeightRecord, repeated=True)
     weight_goal = ndb.StructuredProperty(WeightRecord, repeated=True)
     bmr = ndb.IntegerProperty()
@@ -39,3 +39,5 @@ class User(ndb.Model):
     country = ndb.StringProperty(indexed=True)
     country_subdivision = ndb.StringProperty(indexed=True)
     client_protocol = ndb.StringProperty()
+    platform = ndb.StringProperty()
+    timezone = ndb.StringProperty()

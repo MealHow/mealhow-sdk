@@ -12,7 +12,6 @@ class MeasurementSystem(str, Enum):
 
 
 class Goal(str, Enum):
-    build_muscle = "build muscle"
     lose_weight = "lose weight"
     eat_healthy = "eat healthy"
 
@@ -62,3 +61,9 @@ class HealthIssue(str, Enum):
 class ProteinGoal(str, Enum):
     moderate = "90 to 120 grams"
     high = "more than 120 grams"
+
+
+class Platform(str, Enum):
+    web = "web"
+    ios = "ios"
+    android = "android"
