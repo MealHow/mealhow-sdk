@@ -12,6 +12,7 @@ class MeasurementSystem(str, Enum):
 
 
 class Goal(str, Enum):
+    build_muscles = "build muscles"
     lose_weight = "lose weight"
     eat_healthy = "eat healthy"
 
