@@ -129,6 +129,6 @@ async def compound_most_optimal_meal_plan(
     for day in optimal_meal_plan:
         meals = optimal_meal_plan[day]["meals"]
         for i in range(len(meals)):
-            optimal_meal_plan[day]["meals"][i]["id"] = f"{to_snake_case(meals[i]['meal_name'])}-{meals[i]['calories']}"
+            optimal_meal_plan[day]["meals"][i]["id"] = f"{await to_snake_case(meals[i]['meal_name'])}-{meals[i]['calories']}"
 
     return optimal_meal_plan

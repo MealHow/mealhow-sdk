@@ -68,3 +68,10 @@ class Platform(str, Enum):
     web = "web"
     ios = "ios"
     android = "android"
+
+
+class MealPlanStatus(str, Enum):
+    in_progress = "in_progress"
+    failed = "failed"
+    active = "active"
+    archived = "archived"

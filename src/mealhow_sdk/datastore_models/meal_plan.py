@@ -38,7 +38,8 @@ class MealPlanDetails(ndb.Model):
 
 
 class MealPlan(ndb.Model):
-    active = ndb.BooleanProperty(default=True, indexed=True)
+    status = ndb.StringProperty(indexed=True)
     user = ndb.KeyProperty(kind=User, indexed=True)
+    meal_swaps = ndb.IntegerProperty(default=0)
     details = ndb.StructuredProperty(MealPlanDetails)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
