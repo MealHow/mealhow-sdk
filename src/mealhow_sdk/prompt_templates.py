@@ -6,8 +6,8 @@ CUISINE_SINGULAR = """ is preferred. """
 CUISINES_LIST_PLURAL = """s are preferred. """
 MEAL_PLAN_INGREDIENTS_TO_AVOID = """Avoid the following ingredients: {ingredients}. """
 MEAL_PLAN_HEALTH_ISSUES = """Also I have the following health issues: {health_issues}. """
-MEAL_PLAN_PROTEIN_GOAL = """ and {protein} grams of protein"""
-MEAL_PLAN_PREPARATION_TIME = """I want to spend up to {preparation_time} minutes on meal preparation. """
+MEAL_PLAN_PROTEIN_GOAL = """ and {protein} of protein"""
+MEAL_PLAN_PREPARATION_TIME = """I want to spend {preparation_time} on meal preparation. """
 
 SHOPPING_LIST_REQUEST = """[Writing style guideline: return only meal plan in CSV format: product name; quantity]
 Generate the shopping list for the following meal plan:

@@ -9,8 +9,8 @@ from .helpers import to_snake_case
 @dataclass
 class MealPlanPromptInputData:
     calories_goal: int
-    protein_goal: int | None = None
-    preparation_time: int | None = None
+    protein_goal: str | None = None
+    preparation_time: str | None = None
     preferred_cuisines: list[str] = field(default_factory=lambda: [])
     ingredients_to_avoid: list[str] = field(default_factory=lambda: [])
     health_issues: list[str] = field(default_factory=lambda: [])

@@ -42,4 +42,3 @@ class MealPlan(ndb.Model):
     user = ndb.KeyProperty(kind=User, indexed=True)
     details = ndb.StructuredProperty(MealPlanDetails)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
-    deleted_at = ndb.DateTimeProperty()
