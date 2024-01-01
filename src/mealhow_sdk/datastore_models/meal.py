@@ -1,25 +1,26 @@
 from google.cloud import ndb
 
+from .base import BaseModel
 from .user import User
 
 
-class MealImageThumbnail(ndb.Model):
+class MealImageThumbnail(BaseModel):
     size = ndb.IntegerProperty()
     url = ndb.StringProperty()
 
 
-class MealImage(ndb.Model):
+class MealImage(BaseModel):
     images = ndb.StructuredProperty(MealImageThumbnail, repeated=True)
     artifact_reported = ndb.BooleanProperty(default=False)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
-class MealRecipe(ndb.Model):
+class MealRecipe(BaseModel):
     recipe = ndb.TextProperty()
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
-class Meal(ndb.Model):
+class Meal(BaseModel):
     full_name = ndb.StringProperty(indexed=True)
     calories = ndb.IntegerProperty()
     protein = ndb.IntegerProperty()
@@ -28,11 +29,11 @@ class Meal(ndb.Model):
     image = ndb.KeyProperty(kind=MealImage)
     recipe = ndb.KeyProperty(kind=MealRecipe, indexed=True)
     preparation_time = ndb.IntegerProperty()
-    created_at = ndb.DateTimeProperty(auto_now_add=True)
+    created_at = ndb.DateTimeProperty(auto_now_add=True, indexed=True)
 
 
-class FavoriteMeal(ndb.Model):
+class FavoriteMeal(BaseModel):
     meal = ndb.KeyProperty(kind=Meal, indexed=True)
     user = ndb.KeyProperty(kind=User, indexed=True)
-    created_at = ndb.DateTimeProperty(auto_now_add=True)
-    deleted_at = ndb.DateTimeProperty()
+    created_at = ndb.DateTimeProperty(auto_now_add=True, indexed=True)
+    deleted_at = ndb.DateTimeProperty(indexed=True)

@@ -1,9 +1,10 @@
 from google.cloud import ndb
 
+from .base import BaseModel
 from .user import User
 
 
-class MealPlanItem(ndb.Model):
+class MealPlanItem(BaseModel):
     id = ndb.StringProperty()
     meal_name = ndb.StringProperty()
     meal_time = ndb.StringProperty()
@@ -15,19 +16,19 @@ class MealPlanItem(ndb.Model):
     fats = ndb.IntegerProperty()
 
 
-class MealPlanDayTotalInfo(ndb.Model):
+class MealPlanDayTotalInfo(BaseModel):
     calories = ndb.IntegerProperty()
     protein = ndb.IntegerProperty()
     carbs = ndb.IntegerProperty()
     fats = ndb.IntegerProperty()
 
 
-class MealPlanDayItem(ndb.Model):
+class MealPlanDayItem(BaseModel):
     meals = ndb.LocalStructuredProperty(MealPlanItem, repeated=True)
     total = ndb.LocalStructuredProperty(MealPlanDayTotalInfo)
 
 
-class MealPlanDetails(ndb.Model):
+class MealPlanDetails(BaseModel):
     day_1 = ndb.LocalStructuredProperty(MealPlanDayItem)
     day_2 = ndb.LocalStructuredProperty(MealPlanDayItem)
     day_3 = ndb.LocalStructuredProperty(MealPlanDayItem)
@@ -37,9 +38,9 @@ class MealPlanDetails(ndb.Model):
     day_7 = ndb.LocalStructuredProperty(MealPlanDayItem)
 
 
-class MealPlan(ndb.Model):
+class MealPlan(BaseModel):
     status = ndb.StringProperty(indexed=True)
     user = ndb.KeyProperty(kind=User, indexed=True)
     meal_swaps = ndb.IntegerProperty(default=0)
     details = ndb.StructuredProperty(MealPlanDetails)
-    created_at = ndb.DateTimeProperty(auto_now_add=True)
+    created_at = ndb.DateTimeProperty(auto_now_add=True, indexed=True)

@@ -1,14 +1,16 @@
 from google.cloud import ndb
 
+from .base import BaseModel
 
-class WeightRecord(ndb.Model):
+
+class WeightRecord(BaseModel):
     weight_lbs = ndb.IntegerProperty()
     weight_kg = ndb.IntegerProperty()
     bmi = ndb.FloatProperty()
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 
-class User(ndb.Model):
+class User(BaseModel):
     email = ndb.StringProperty(indexed=True)
     birth_year = ndb.DateProperty()
     biological_sex = ndb.StringProperty()
