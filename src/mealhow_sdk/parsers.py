@@ -58,3 +58,23 @@ async def parse_diet_plan(raw_data: str) -> list[dict]:
             new_data.append(parsed_data[i])
 
     return new_data
+
+
+async def parse_shopping_list(raw_data: str) -> list[dict]:
+    parsed_data = await _parse_csv(
+        raw_data,
+        keyword="quantity",
+        fieldnames=consts.SHOPPING_LIST_FIELDNAMES,
+    )
+
+    new_data = []
+    for i in range(len(parsed_data)):
+        try:
+            for key in consts.SHOPPING_LIST_FIELDNAMES:
+                parsed_data[i][key] = parsed_data[i][key].strip()
+        except (ValueError, AttributeError):
+            pass
+        else:
+            new_data.append(parsed_data[i])
+
+    return new_data

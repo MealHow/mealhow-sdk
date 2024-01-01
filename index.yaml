@@ -16,3 +16,9 @@ indexes:
   - name: meal
   - name: user
   - name: deleted_at
+- kind: ShoppingList
+  properties:
+  - name: deleted_at
+  - name: user
+  - name: created_at
+    direction: desc

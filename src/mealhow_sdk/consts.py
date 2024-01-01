@@ -31,3 +31,8 @@ MEAL_PLAN_FIELDNAMES = [
     "carbs",
     "fats",
 ]
+
+SHOPPING_LIST_FIELDNAMES = [
+    "product_name",
+    "quantity",
+]
