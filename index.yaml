@@ -11,3 +11,8 @@ indexes:
   - name: deleted_at
   - name: created_at
     direction: desc
+- kind: FavoriteMeal
+  properties:
+  - name: meal
+  - name: user
+  - name: deleted_at
