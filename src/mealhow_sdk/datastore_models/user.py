@@ -35,7 +35,7 @@ class User(ndb.Model):
     subscription_status = ndb.StringProperty()
 
     last_requested_meal_plan_at = ndb.DateTimeProperty()
-    created_at = ndb.DateProperty(auto_now_add=True)
+    created_at = ndb.DateTimeProperty(auto_now_add=True)
 
     cdn_cache_id = ndb.StringProperty(indexed=True)
     country = ndb.StringProperty(indexed=True)
