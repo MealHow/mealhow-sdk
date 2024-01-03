@@ -11,6 +11,7 @@ class WeightRecord(BaseModel):
 
 
 class User(BaseModel):
+    name = ndb.StringProperty()
     email = ndb.StringProperty(indexed=True)
     birth_year = ndb.DateProperty()
     biological_sex = ndb.StringProperty()
@@ -37,6 +38,7 @@ class User(BaseModel):
     subscription_status = ndb.StringProperty()
 
     last_requested_meal_plan_at = ndb.DateTimeProperty()
+    updated_at = ndb.DateTimeProperty()
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
     cdn_cache_id = ndb.StringProperty(indexed=True)

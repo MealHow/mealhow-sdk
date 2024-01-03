@@ -27,7 +27,7 @@ disallow_untyped_defs = true
 
 [tool.poetry]
 name = "mealhow-sdk"
-version = "0.2.8"
+version = "0.2.9"
 description = "MealHow Python SDK"
 authors = ["Vitalii Vinnychenko <vitalii@mealhow.ai>"]
 license = "Proprietary"

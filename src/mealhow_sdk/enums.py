@@ -75,3 +75,9 @@ class MealPlanStatus(str, Enum):
     failed = "failed"
     active = "active"
     archived = "archived"
+
+
+class JobStatus(str, Enum):
+    in_progress = "in_progress"
+    failed = "failed"
+    active = "active"

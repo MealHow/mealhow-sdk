@@ -12,6 +12,7 @@ class ShoppingListItem(BaseModel):
 
 class ShoppingList(BaseModel):
     name = ndb.StringProperty(indexed=True)
+    status = ndb.StringProperty(indexed=True)
     user = ndb.KeyProperty(kind=User, indexed=True)
     items = ndb.StructuredProperty(ShoppingListItem, repeated=True)
     linked_meals = ndb.KeyProperty(kind=Meal, repeated=True)
