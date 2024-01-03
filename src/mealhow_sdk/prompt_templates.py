@@ -10,7 +10,7 @@ MEAL_PLAN_PROTEIN_GOAL = """ and {protein} of protein"""
 MEAL_PLAN_PREPARATION_TIME = """I want to spend {preparation_time} on meal preparation. """
 
 SHOPPING_LIST_REQUEST = """[Writing style guideline: return only meal plan in CSV format: product name; quantity]
-Generate the shopping list for the following meal plan:
+Give me detailed shopping list for the following meal plan:
 {meals_list}
 """
 

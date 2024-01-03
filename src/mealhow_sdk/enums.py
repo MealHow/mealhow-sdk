@@ -80,4 +80,4 @@ class MealPlanStatus(str, Enum):
 class JobStatus(str, Enum):
     in_progress = "in_progress"
     failed = "failed"
-    active = "active"
+    done = "done"
