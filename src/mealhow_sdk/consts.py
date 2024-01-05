@@ -34,5 +34,6 @@ MEAL_PLAN_FIELDNAMES = [
 
 SHOPPING_LIST_FIELDNAMES = [
     "product_name",
+    "product_category",
     "quantity",
 ]

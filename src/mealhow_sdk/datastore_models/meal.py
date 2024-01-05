@@ -16,7 +16,8 @@ class MealImage(BaseModel):
 
 
 class MealRecipe(BaseModel):
-    recipe = ndb.TextProperty()
+    text = ndb.TextProperty()
+    ingredients = ndb.StringProperty(repeated=True)
     created_at = ndb.DateTimeProperty(auto_now_add=True)
 
 

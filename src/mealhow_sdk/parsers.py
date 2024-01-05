@@ -1,4 +1,5 @@
 import csv
+import re
 
 from . import consts, helpers
 
@@ -78,3 +79,21 @@ async def parse_shopping_list(raw_data: str) -> list[dict]:
             new_data.append(parsed_data[i])
 
     return new_data
+
+
+async def extract_section(text: str, start_section: str, end_section: str) -> str | None:
+    # Define a pattern to capture text between two specified sections
+    pattern = rf"{start_section}:(.*?){end_section}:"
+
+    # Perform the search
+    match = re.search(pattern, text, re.DOTALL)
+
+    # Extract and return the text if a match is found
+    if match:
+        return match.group(1).strip()
+    else:
+        return None
+
+
+async def extract_ingredients(text: str) -> list[str]:
+    return re.findall(r"-\s*(.*?)(?=\n-|\n\n|\Z)", text, re.DOTALL)

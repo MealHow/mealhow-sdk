@@ -7,6 +7,7 @@ from .user import User
 
 class ShoppingListItem(BaseModel):
     name = ndb.StringProperty()
+    category = ndb.StringProperty()
     quantity = ndb.StringProperty()
 
 

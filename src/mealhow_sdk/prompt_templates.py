@@ -9,10 +9,16 @@ MEAL_PLAN_HEALTH_ISSUES = """Also I have the following health issues: {health_is
 MEAL_PLAN_PROTEIN_GOAL = """ and {protein} of protein"""
 MEAL_PLAN_PREPARATION_TIME = """I want to spend {preparation_time} on meal preparation. """
 
-SHOPPING_LIST_REQUEST = """[Writing style guideline: return only meal plan in CSV format: product name; quantity]
+SHOPPING_LIST_MEALS_REQUEST = """[Writing style guideline: return only meal plan in CSV format: product_name; product_category; quantity]
+Available product categories: "fruits", "vegetables", "canned goods", "dairy", "meat", "fish & seafood", "deli", "condiments & spices", "snacks", "bread & bakery", "beverages", "pasta, rice & cereal", "baking", "frozen foods", "other".
 Give me detailed shopping list for the following meal plan:
-{meals_list}
+{meal_plan}
+"""
+SHOPPING_LIST_INGREDIENTS_REQUEST = """[Writing style guideline: return only meal plan in CSV format: product_name; product_category; quantity]
+Available product categories: "fruits", "vegetables", "canned goods", "dairy", "meat", "fish & seafood", "deli", "condiments & spices", "snacks", "bread & bakery", "beverages", "pasta, rice & cereal", "baking", "frozen foods", "other".
+Give me a detailed shopping list for the following ingredients:
+{ingredients}
 """
 
 MEAL_IMAGE_PROMPT = """Professional food picture of {meal_name} meal on the kitchen table"""
-MEAL_RECIPE_REQUEST = """Tell me the ingredients and recipe for {meal}"""
+MEAL_RECIPE_REQUEST = """Tell me the ingredients and recipe for {meal}. Use markdown format and put the ingredients at the top of the response."""
