@@ -9,6 +9,7 @@ class ShoppingListItem(BaseModel):
     name = ndb.StringProperty()
     category = ndb.StringProperty()
     quantity = ndb.StringProperty()
+    marked = ndb.BooleanProperty(default=False)
 
 
 class ShoppingList(BaseModel):

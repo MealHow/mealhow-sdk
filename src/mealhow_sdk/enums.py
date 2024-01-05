@@ -51,6 +51,8 @@ class IngredientsToAvoid(str, Enum):
     eggs = "eggs"
     nuts = "nuts"
     gluten = "gluten"
+    whey_protein = "whey protein"
+    protein_bar = "protein bar"
 
 
 class HealthIssue(str, Enum):

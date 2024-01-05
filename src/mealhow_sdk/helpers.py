@@ -1,3 +1,4 @@
+import math
 import re
 
 from .enums import ActivityLevel, BiologicalSex, Goal
@@ -63,7 +64,7 @@ async def get_calories_goal_by_activity_level(bmr_value: int, activity_level: st
 
 async def get_calories_goal_by_goal_type(bmr_value: int, goal_type: str) -> int:
     if goal_type == Goal.lose_weight.value:
-        return int(round(bmr_value * 0.8))
+        return int(round(bmr_value * 0.7))
     elif goal_type == Goal.build_muscles.value:
         return int(round(bmr_value * 1.1))
 
@@ -71,4 +72,4 @@ async def get_calories_goal_by_goal_type(bmr_value: int, goal_type: str) -> int:
 
 
 async def round_calories_goal_to_nearest_100(calories_goal: int) -> int:
-    return int(round(calories_goal / 100.0)) * 100
+    return int(math.floor(calories_goal / 100.0)) * 100
