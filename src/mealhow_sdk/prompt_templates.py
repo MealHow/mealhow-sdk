@@ -1,3 +1,6 @@
+MEAL_PLAN_PREVIEW_BASE_PROMPT = """[Writing style guideline: return only meal plan in CSV format (semicolon separated): day(number); meal time; meal name; preparation time; calories; protein; carbs; fats]
+Please make me a meal plan for a single day. I must hit a {calories_goal}-calorie{protein_goal_prompt} goal. """
+
 MEAL_PLAN_BASE_PROMPT = """[Writing style guideline: return only meal plan in CSV format (semicolon separated): day(number); meal time; meal name; preparation time; calories; protein; carbs; fats]
 Please make me a meal plan for a week's worth of meals. I must hit a {calories_goal}-calorie{protein_goal_prompt} goal for each day. """
 

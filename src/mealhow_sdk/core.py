@@ -16,8 +16,11 @@ class MealPlanPromptInputData:
     health_issues: list[str] = field(default_factory=lambda: [])
 
 
-async def get_openai_meal_plan_prompt(data: MealPlanPromptInputData) -> str:
-    prompt = prompt_templates.MEAL_PLAN_BASE_PROMPT
+async def get_openai_meal_plan_prompt(
+    data: MealPlanPromptInputData,
+    base_prompt: str = prompt_templates.MEAL_PLAN_BASE_PROMPT
+) -> str:
+    prompt = base_prompt
 
     if data.protein_goal:
         prompt = prompt.format(
