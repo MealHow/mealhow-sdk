@@ -20,5 +20,6 @@ indexes:
   properties:
   - name: deleted_at
   - name: user
+  - name: status
   - name: created_at
     direction: desc
